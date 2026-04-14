@@ -1,135 +1,74 @@
-# DSA 210 Project – April 14 Milestone
+# DSA 210 Project – April 14 Milestone Package
 
 ## Project Title
+What Factors Affect International Students' Satisfaction and Migration Intentions?
 
-What Factors Affect Student Satisfaction and Migration Intentions?
+## What this milestone covers
+According to the course guideline, the April 14 deadline is for:
+- data collection
+- exploratory data analysis (EDA)
+- hypothesis tests
 
----
+This package gives you a clean repo structure and ready-to-use files for that milestone.
 
-## Project Description
-
-This project aims to analyze the factors affecting student satisfaction using survey-based data. The focus is on understanding how different aspects such as academic experience, financial conditions, and social support influence overall satisfaction levels.
-
-Additionally, the project explores the potential relationship between satisfaction and future intentions (e.g., staying or leaving), which will be further developed in later stages.
-
----
-
-## Data Source
-
-The dataset used in this project was obtained from publicly available sources (Kaggle student survey datasets). It contains information about students’ experiences, satisfaction levels, and related factors.
-
----
-
-## Data Collection
-
-The dataset was downloaded directly as a CSV file and cleaned using Python. Missing values and inconsistent data types were handled before analysis.
-
----
-
-## Dataset Characteristics
-
-The dataset includes variables such as:
-
-* Satisfaction-related numeric scores
-* Academic experience indicators
-* Financial condition variables
-* Social and environmental factors
-
-The dataset contains multiple observations, allowing meaningful statistical analysis.
-
----
-
-## Exploratory Data Analysis (EDA)
-
-The following EDA steps were performed:
-
-* Summary statistics calculation
-* Distribution visualization using histograms
-* Basic inspection of dataset structure
-
-These steps helped to understand the distribution and variability of the key variables.
-
----
-
-## Hypothesis Testing
-
-To evaluate relationships between variables, statistical tests were applied:
-
-* **ANOVA Test** was used to determine whether there are significant differences between groups
-
-The results are stored in the repository as:
-
-* `summary.csv`
-* `results.json`
-* `hist.png`
-
----
-
-## Key Findings
-
-* The distribution of the main variable was analyzed
-* Group-based differences were tested using ANOVA
-* Statistical significance was evaluated based on p-values
-
----
-
-## Enrichment Plan
-
-In accordance with the project guidelines, the dataset will be enriched in the next stage using external data sources such as country-level indicators (e.g., GDP per capita).
-
----
-
-## Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* SciPy
-
----
-
-## Repository Structure
-
-```
+## Suggested repo structure
+```text
 .
 ├── data/
+│   ├── raw/
+│   │   └── put_your_main_dataset_here.csv
+│   └── processed/
+├── notebooks/
+│   └── april14_milestone_analysis.ipynb   # optional, if you convert from the .py file
+├── src/
+│   └── april14_analysis.py
 ├── outputs/
-│   ├── summary.csv
-│   ├── results.json
-│   └── hist.png
+│   └── figures/
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── report_april14.md
+├── ai_usage_disclosure.md
+└── .gitignore
 ```
 
----
+## Dataset strategy
+Your proposal says you will use public survey-style data about international students and, if needed, combine or enrich it with additional sources.
 
-## Reproducibility
+The guideline also says that if you use a public dataset, you are expected to enrich it with another dataset.
 
-To reproduce this analysis:
+### Recommended practical strategy
+Use:
+1. **One main student survey dataset**
+   - should include satisfaction-related variables such as academic experience, housing, social life, finances, support, or well-being
+   - if you find a dataset specifically for international students, use that first
+   - if not, use a student satisfaction dataset and clearly state that the analysis is a proxy for international student experience until a more specific dataset is added
 
-1. Install dependencies:
+2. **One enrichment dataset**
+   - add country-level or university-level context
+   - examples:
+     - GDP per capita from World Bank
+     - education indicators from World Bank / UNESCO
+     - cost-of-living or country-level development indicators
 
-```
-pip install -r requirements.txt
-```
+## What to do before submission
+1. Put your CSV file into `data/raw/`
+2. Rename it to `student_survey.csv`
+3. Open `src/april14_analysis.py`
+4. Adjust column names in the `CONFIG` section if needed
+5. Run the script
+6. Commit all outputs to GitHub
 
-2. Run the analysis script:
+## Minimum GitHub commit suggestion
+- commit 1: proposal + repo setup
+- commit 2: raw data added
+- commit 3: EDA notebook / script
+- commit 4: hypothesis tests and report update
 
-```
-python src/april14_analysis.py
-```
+## Submission wording you can use
+For the April 14 milestone, I completed the data collection phase, performed exploratory data analysis, and applied hypothesis tests on the dataset. I also enriched the public dataset with an additional external data source, in line with the course requirements.
 
----
-
-## AI Usage Disclosure
-
-AI tools were used to assist with:
-
-* project structuring
-* code generation
-* documentation
-
-All final decisions and submissions were reviewed and completed by the student.
-
----
+## Important note
+If your exact dataset does not contain a direct `migration_intention` column, you can still submit this milestone with:
+- satisfaction analysis as the main track
+- intention-to-stay / future-plan / study-abroad / career-plan variable as a proxy if available
+- otherwise explicitly say migration intention modeling will be part of the next stage once the final dataset is finalized
